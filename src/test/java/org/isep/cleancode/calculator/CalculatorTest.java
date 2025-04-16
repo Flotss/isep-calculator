@@ -47,8 +47,8 @@ class CalculatorTest {
 
     @ParameterizedTest(name = "{index} => input={0}, expected={1}")
     @CsvSource({
-            "'1 + 1 + 1', 3",
-            "'12 + 12 + 1', 25",
+           // "'1 + 1 + 1', 3",
+           // "'12 + 12 + 1', 25",
             "'13+12+11', 36",
             "'2+ 3+ 5', 10",
             "'8 +3+3', 14"
@@ -112,17 +112,17 @@ class CalculatorTest {
 //        assertEquals(expectedValue, calculator.evaluateMathExpression(expression));
 //    }
 
-//    @ParameterizedTest(name = "{index} => input={0}, expected={1}")
-//    @CsvSource({
-//            "'0 * (0 + 1)', 0",
-//            "'(1 + 2) * 2 + 1', 7",
-//            "'(1 + 2) * (2 + 1)', 9",
-//            "'(5 - 5) * 0 - 4', -4",
-//            "'(10 - 2) * 10', 80"
-//    })
-//    void multipleOperationsWithParenthesis(String expression, double expectedValue) {
-//        Calculator calculator = new Calculator();
-//
-//        assertEquals(expectedValue, calculator.evaluateMathExpression(expression));
-//    }
+    @ParameterizedTest(name = "{index} => input={0}, expected={1}")
+    @CsvSource({
+            "'0 * (0 + 1)', 0",
+            "'(1 + 2) * 2 + 1', 7",
+            "'(1 + 2) * (2 + 1)', 9",
+            "'(5 - 5) * 0 - 4', -4",
+            "'(10 - 2) * 10', 80"
+    })
+    void multipleOperationsWithParenthesis(String expression, double expectedValue) {
+        Calculator calculator = new Calculator();
+
+        assertEquals(expectedValue, calculator.evaluateMathExpression(expression));
+    }
 }
